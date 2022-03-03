@@ -13,12 +13,9 @@ def reverse(num_in: int) -> int:
     else:
         neg = 0
     num_out = 0
+    num_in = abs(num_in)
     while num_in != 0:
-        num_out = num_out * 10
-        if num_in < 0 and num_in % 10 != 0:
-            num_out = num_out + 10 - num_in % 10
-        else:
-            num_out = num_out + num_in % 10
+        num_out = num_out * 10 + num_in % 10
         num_in = int(num_in/10)
     if neg == 1:
         num_out = -num_out
@@ -28,9 +25,7 @@ def reverse(num_in: int) -> int:
 
 
 if __name__ == "__main__":
-    # k = random.randint(-2**31, 2**32)
-
-    k = 1563847412
+    k = random.randint(-2**31, 2**32)
     t = reverse(k)
 
     print(k, t)
