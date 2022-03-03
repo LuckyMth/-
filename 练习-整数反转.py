@@ -7,7 +7,7 @@
 import random
 
 
-def reverse(num_in):
+def reverse(num_in: int) -> int:
     if num_in < 0:
         neg = 1
     else:
@@ -15,21 +15,24 @@ def reverse(num_in):
     num_out = 0
     while num_in != 0:
         num_out = num_out * 10
-        if num_in < 0:
+        if num_in < 0 and num_in % 10 != 0:
             num_out = num_out + 10 - num_in % 10
         else:
             num_out = num_out + num_in % 10
         num_in = int(num_in/10)
     if neg == 1:
         num_out = -num_out
-    if num_out > 2**32-1 or num_out < -2**32:
+    if num_out > 2**31-1 or num_out < -2**31:
         num_out = 0
     return num_out
 
 
 if __name__ == "__main__":
-    k = random.randint(-2**31, 2**32)
+    # k = random.randint(-2**31, 2**32)
+
+    k = 1563847412
     t = reverse(k)
 
     print(k, t)
+
 
