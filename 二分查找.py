@@ -3,17 +3,17 @@ import random
 
 
 # 二分查找，需要lst从小到大排序
-def bin_search(lst, ni):
-    bsi = 0
-    bsj = len(lst)-1
-    while bsi != bsj:
-        bm = int((bsi+bsj)/2)
-        if ni == lst[bm]:
-            return bm
-        elif ni > lst[bm]:
-            bsi = bm
+def bin_search(lst, target):
+    i = 0
+    j = len(lst)-1
+    while i <= j:
+        mid = int((i+j)/2)
+        if target == lst[mid]:
+            return mid
+        elif target > lst[mid]:
+            i = mid
         else:
-            bsj = bm
+            j = mid
     return -1
 
 
