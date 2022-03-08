@@ -11,9 +11,9 @@ def bin_search(lst, target):
         if target == lst[mid]:
             return mid
         elif target > lst[mid]:
-            i = mid
+            i = mid+1
         else:
-            j = mid
+            j = mid-1
     return -1
 
 
